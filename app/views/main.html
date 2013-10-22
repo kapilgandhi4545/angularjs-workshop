@@ -3,8 +3,8 @@
     <input ng-model="newTodo" type="text" placeholder="What you want to do?"/><button ng-click="add(newTodo)">Add</button>
     <hr/>
     <ul>
-        <li ng-repeat="todo in todos" ng-class="{'done':todo.done}">
-            <input type="checkbox" ng-model="todo.done"/> {{todo.text}} <button ng-click="delete($index)" class="pull-right">Delete</button>
+        <li ng-repeat="(id, todo) in todos" ng-class="{'done':todo.done}">
+            <input type="checkbox" ng-model="todo.done"/> {{todo.text}} <button ng-click="delete(id)" class="pull-right">Delete</button>
         </li>
     </ul>
 

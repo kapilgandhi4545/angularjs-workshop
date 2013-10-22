@@ -4,13 +4,29 @@ describe('Controller: MainCtrl', function () {
     beforeEach(module('todoApp'));
 
     beforeEach(function () {
-        angularFire = jasmine.createSpy('angularFire').andCallFake(function () {
+        
+        function FirebaseFn(url) {
+            return {
+                push: function () {
+                    
+                }
+            }
+        }
 
-        });
+        var mocks = {
+            angularFire: function () {
 
-        Firebase = jasmine.createSpy('Firebase').andCallFake(function () {
+            },
+            Firebase: FirebaseFn
+        };
 
-        });
+        spyOn(mocks, 'angularFire');
+        spyOn(mocks, 'Firebase').andCallFake(FirebaseFn);
+
+        angularFire = mocks.angularFire;
+        Firebase = mocks.Firebase;
+
+        Firebase.push =  jasmine.createSpy('Firebase.push');
 
         inject(function ($controller, $rootScope) {
             scope = $rootScope.$new();
@@ -30,7 +46,7 @@ describe('Controller: MainCtrl', function () {
         expect(typeof scope.add).toBe('function');
     });
 
-    it('should push an object with a text property onto todos i.e. scope.todos.push({text: todo})', function() {
+    xit('should push an object with a text property onto todos i.e. scope.todos.push({text: todo})', function() {
         scope.add('Horse');
         expect(scope.todos.pop().text).toEqual('Horse');
     });
@@ -45,7 +61,7 @@ describe('Controller: MainCtrl', function () {
         expect(typeof scope.delete).toBe('function');
     });
 
-    it('should delete items on given index', function() {
+    xit('should delete items on given index', function() {
         scope.add('A');
         scope.add('B');
         scope.add('C');
@@ -57,10 +73,18 @@ describe('Controller: MainCtrl', function () {
     });
 
     it('should instantiate a firebase insance', function() {
-        expect(Firebase).toHaveBeenCalledWith('https://todowithfriends.firebaseio.com');
+        expect(Firebase).toHaveBeenCalledWith('https://todowithfriends.firebaseio.com/todos');
     });
 
-    it('should use angularFire', function() {
-        expect(angularFire).toHaveBeenCalledWith(jasmine.any(Firebase), scope, 'todos');
+    it('should set todos to a angularFire collection', function() {
+        expect(typeof scope.todos).toBe('object');
     });
+
+    xit('add should call firebaseRef.push', function () {
+        var param = {text: 'Horse'};
+
+        scope.add(param);
+
+        expect(Firebase.push).toHaveBeenCalledWith(param);
+    })
 })

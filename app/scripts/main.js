@@ -1,9 +1,10 @@
-angular.module('todoApp').controller('MainCtrl', function ($scope) {
+angular.module('todoApp').controller('MainCtrl', function ($scope, angularFire, Firebase) {
 
-    $scope.todos = [
-        {text: 'Do something important'},
-        {text:  'Be awesome', done: true}
-    ];
+    var ref = new Firebase('https://todowithfriends.firebaseio.com');
+
+    $scope.todos = [];
+
+    angularFire(ref, $scope, 'todos');
 
     $scope.add = function (todo) {
         $scope.todos.push({text: todo});

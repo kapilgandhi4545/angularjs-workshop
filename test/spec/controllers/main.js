@@ -1,14 +1,26 @@
 describe('Controller: MainCtrl', function () {
-    var MainCtrl, scope;
+    var MainCtrl, scope, angularFire, Firebase;
 
     beforeEach(module('todoApp'));
 
-    beforeEach(inject(function ($controller, $rootScope) {
-        scope = $rootScope.$new();
-        MainCtrl = $controller('MainCtrl', {
-            $scope: scope
+    beforeEach(function () {
+        angularFire = jasmine.createSpy('angularFire').andCallFake(function () {
+
         });
-    }));
+
+        Firebase = jasmine.createSpy('Firebase').andCallFake(function () {
+
+        });
+
+        inject(function ($controller, $rootScope) {
+            scope = $rootScope.$new();
+            MainCtrl = $controller('MainCtrl', {
+                $scope: scope,
+                angularFire: angularFire,
+                Firebase: Firebase
+            });
+        });
+    });
 
     it('should attach an array of todos to scope', function () {
         expect(typeof scope.todos).toBe('object');
@@ -42,5 +54,13 @@ describe('Controller: MainCtrl', function () {
         scope.delete(index);
 
         expect(scope.todos.pop().text).toBe('B');
+    });
+
+    it('should instantiate a firebase insance', function() {
+        expect(Firebase).toHaveBeenCalledWith('https://todowithfriends.firebaseio.com');
+    });
+
+    it('should use angularFire', function() {
+        expect(angularFire).toHaveBeenCalledWith(jasmine.any(Firebase), scope, 'todos');
     });
 })

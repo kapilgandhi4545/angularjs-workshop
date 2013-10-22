@@ -1,0 +1,13 @@
+li.done
+{
+    font-style: italic;
+    color: #aaa;
+    text-decoration: line-through;
+}
+
+li
+{
+    list-style: none;
+    clear: both;
+    border-bottom: 1px solid #aaa;
+}

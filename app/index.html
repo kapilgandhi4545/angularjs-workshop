@@ -11,9 +11,14 @@
     <link rel="stylesheet" href="styles/lib/bootstrap/css/bootstrap.min.css"/>
 
 </head>
-<body>
+<body ng-app="todoApp">
 
-    <h1>Cześć ludzie :)</h1>
+    <div class="container" ng-view></div>
 
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/main.js"></script>
+    
 </body>
 </html>

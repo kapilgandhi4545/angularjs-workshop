@@ -108,3 +108,30 @@ li > button:hover:after
     -o-transform: scale(1.3);
     transform: scale(1.3);
 }
+
+.top-menu
+{
+    border-bottom: 5px solid #fafafa;
+    margin-bottom: 15px;
+}
+
+.top-menu ul li
+{
+    display: inline-block;
+    line-height: normal;
+}
+
+.top-menu ul li a
+{
+    background: #f1f1f1;
+    border: 1px solid #eee;
+    padding: 5px;
+    line-height: normal;
+    border-radius: 2px;
+    text-decoration: none;
+}
+
+.top-menu ul li a:hover
+{
+    background: #fefefe;
+}

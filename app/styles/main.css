@@ -59,7 +59,7 @@ li > input
 li > input:after
 {
     color:rgb(207, 207, 207) !important;
-    content: '✔';
+    content: '?';
 
 }
 
@@ -95,7 +95,7 @@ li > button {
 li > button:after
 {
     color: rgb(207, 207, 207);
-    content: '✖';
+    content: '?';
 }
 
 li > button:hover:after

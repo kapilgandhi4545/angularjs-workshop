@@ -29,24 +29,19 @@ body
     width: 15%;
 }
 
->>>>>>> master
-        li.done
-        {
-            font-style: italic;
-            color: #aaa;
-            text-decoration: line-through;
-        }
+li.done
+{
+    font-style: italic;
+    color: #aaa;
+    text-decoration: line-through;
+}
 
 li
 {
     list-style: none;
     clear: both;
-    <<<<<<< HEAD
-    border-bottom: 1px solid #aaa;
-    }
-=======
-border-bottom: 1px dotted #aaa;
-    }
+    border-bottom: 1px dotted #aaa;
+}
 
 li > input
 {

@@ -1,0 +1,71 @@
+.fade-animation.ng-enter, .fade-animation.ng-leave, .fade-animation.ng-move {
+  -webkit-transition: all ease 0.6s;
+  -moz-transition: all ease 0.6s;
+  -o-transition: all ease 0.6s;
+  transition: all ease 0.6s; }
+.fade-animation.ng-enter {
+  opacity: 0; }
+  .fade-animation.ng-enter.ng-enter-active {
+    opacity: 1; }
+.fade-animation.ng-leave {
+  opacity: 1; }
+  .fade-animation.ng-leave.ng-leave-active {
+    opacity: 0; }
+
+.fadeslideright-animation.ng-enter, .fadeslideright-animation.ng-leave, .fadeslideright-animation.ng-move {
+  -webkit-transition: all ease 0.6s;
+  -moz-transition: all ease 0.6s;
+  -o-transition: all ease 0.6s;
+  transition: all ease 0.6s; }
+.fadeslideright-animation.ng-enter {
+  opacity: 0;
+  transform: translateX(-20px); }
+  .fadeslideright-animation.ng-enter.ng-enter-active {
+    opacity: 1;
+    transform: translateX(0px); }
+.fadeslideright-animation.ng-leave {
+  opacity: 1;
+  transform: translateX(0px); }
+  .fadeslideright-animation.ng-leave.ng-leave-active {
+    opacity: 0;
+    transform: translateX(-20px); }
+
+.fadeslidedown-animation.ng-enter, .fadeslidedown-animation.ng-leave, .fadeslidedown-animation.ng-move {
+  -webkit-transition: all ease 0.6s;
+  -moz-transition: all ease 0.6s;
+  -o-transition: all ease 0.6s;
+  transition: all ease 0.6s; }
+.fadeslidedown-animation.ng-enter {
+  opacity: 0;
+  transform: translateY(-20px); }
+  .fadeslidedown-animation.ng-enter.ng-enter-active {
+    opacity: 1;
+    transform: translateY(0px); }
+.fadeslidedown-animation.ng-leave {
+  opacity: 1;
+  transform: translateY(0px); }
+  .fadeslidedown-animation.ng-leave.ng-leave-active {
+    opacity: 0;
+    transform: translateY(20px); }
+
+.global-view-change-animation.ng-enter, .global-view-change-animation.ng-leave {
+  -webkit-transition: all ease 0.8s;
+  -moz-transition: all ease 0.8s;
+  -o-transition: all ease 0.8s;
+  transition: all ease 0.8s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block; }
+.global-view-change-animation.ng-enter {
+  transform: translateX(-20px);
+  opacity: 0; }
+  .global-view-change-animation.ng-enter.ng-enter-active {
+    transform: translateX(0px);
+    opacity: 1; }
+.global-view-change-animation.ng-leave {
+  opacity: 1;
+  transform: translateX(0px); }
+  .global-view-change-animation.ng-leave.ng-leave-active {
+    opacity: 0;
+    transform: translateX(20px); }

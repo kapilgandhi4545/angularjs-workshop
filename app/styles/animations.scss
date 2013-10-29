@@ -1,0 +1,139 @@
+.fade-animation
+{
+  &.ng-enter, &.ng-leave, &.ng-move {
+    -webkit-transition:all ease 0.6s;
+    -moz-transition:all ease 0.6s;
+    -o-transition:all ease 0.6s;
+    transition:all ease 0.6s;
+  }
+
+  &.ng-enter {
+    opacity: 0;
+
+    &.ng-enter-active {
+      opacity: 1;
+    }
+  }
+
+  &.ng-leave {
+    opacity: 1;
+
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+
+  &.ng-move {
+    .ng-move-active {
+
+    }
+  }
+}
+
+.fadeslideright-animation
+{
+  &.ng-enter, &.ng-leave, &.ng-move {
+    -webkit-transition:all ease 0.6s;
+    -moz-transition:all ease 0.6s;
+    -o-transition:all ease 0.6s;
+    transition:all ease 0.6s;
+  }
+
+  &.ng-enter {
+    opacity: 0;
+    transform: translateX(-20px);
+
+    &.ng-enter-active {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  &.ng-leave {
+    opacity: 1;
+    transform: translateX(0px);
+
+    &.ng-leave-active {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+  }
+
+  &.ng-move {
+    .ng-move-active {
+
+    }
+  }
+}
+
+.fadeslidedown-animation
+{
+  &.ng-enter, &.ng-leave, &.ng-move {
+    -webkit-transition:all ease 0.6s;
+    -moz-transition:all ease 0.6s;
+    -o-transition:all ease 0.6s;
+    transition:all ease 0.6s;
+  }
+
+  &.ng-enter {
+    opacity: 0;
+    transform: translateY(-20px);
+
+    &.ng-enter-active {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  &.ng-leave {
+    opacity: 1;
+    transform: translateY(0px);
+
+    &.ng-leave-active {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+
+  &.ng-move {
+    .ng-move-active {
+
+    }
+  }
+}
+
+.global-view-change-animation
+{
+  &.ng-enter, &.ng-leave {
+    -webkit-transition: all ease 0.8s;
+    -moz-transition: all ease 0.8s;
+    -o-transition: all ease 0.8s;
+    transition: all ease 0.8s;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+  }
+
+  &.ng-enter {
+    transform: translateX(-20px);
+    opacity: 0;
+
+    &.ng-enter-active {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+
+  &.ng-leave {
+    opacity: 1;
+    transform: translateX(0px);
+
+    &.ng-leave-active {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+  }
+
+}

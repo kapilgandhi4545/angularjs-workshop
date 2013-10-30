@@ -1,0 +1,50 @@
+.fancy-animation {
+  line-height: 20px;
+  overflow: hidden; }
+  .fancy-animation.ng-enter, .fancy-animation.ng-leave, .fancy-animation.ng-move {
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+  .fancy-animation.ng-enter {
+    line-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0; }
+    .fancy-animation.ng-enter.ng-enter-active {
+      line-height: 20px;
+      opacity: 1;
+      padding: 10px; }
+  .fancy-animation.ng-leave {
+    opacity: 1;
+    line-height: 20px;
+    padding: 10px;
+    height: 47px; }
+    .fancy-animation.ng-leave.ng-leave-active {
+      opacity: 0;
+      line-height: 0;
+      height: 0;
+      padding-top: 0;
+      padding-bottom: 0; }
+
+.view-change-animation.ng-enter, .view-change-animation.ng-leave {
+  -webkit-transition: all ease 0.8s;
+  -moz-transition: all ease 0.8s;
+  -o-transition: all ease 0.8s;
+  transition: all ease 0.8s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block; }
+.view-change-animation.ng-enter {
+  transform: translateX(-20px);
+  opacity: 0; }
+  .view-change-animation.ng-enter.ng-enter-active {
+    transform: translateX(0px);
+    opacity: 1; }
+.view-change-animation.ng-leave {
+  opacity: 1;
+  transform: translateX(0px); }
+  .view-change-animation.ng-leave.ng-leave-active {
+    opacity: 0;
+    transform: translateX(20px); }

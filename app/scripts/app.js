@@ -1,4 +1,4 @@
-angular.module('todoApp', ['firebase']).config(function ($routeProvider) {
+angular.module('todoApp', ['firebase', 'ngRoute', 'ngAnimate']).config(function ($routeProvider) {
     $routeProvider
         .when('/', {
             controller: 'MainCtrl',

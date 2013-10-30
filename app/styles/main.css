@@ -29,7 +29,6 @@ body
     width: 15%;
 }
 
->>>>>>> master
 li.done
 {
     font-style: italic;
@@ -41,10 +40,6 @@ li
 {
     list-style: none;
     clear: both;
-<<<<<<< HEAD
-    border-bottom: 1px solid #aaa;
-}
-=======
     border-bottom: 1px dotted #aaa;
 }
 
